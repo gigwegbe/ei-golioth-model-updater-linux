@@ -12,7 +12,7 @@ cd ..
 ## Step 1: Generate Project Root CA (One Time Per Project)
 
 ```bash
-cd golioth-model-updater
+cd ei-golioth-model-updater-linux
 mkdir -p certs
 cd certs
 ../../golioth-firmware-sdk/scripts/certificates/generate_root_certificate.sh
