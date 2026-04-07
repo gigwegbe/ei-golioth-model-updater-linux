@@ -11,7 +11,8 @@ cd ..
 
 ## Step 1: Generate Project Root CA (One Time Per Project)
 
-```bash
+```bashss
+git clone https://github.com/gigwegbe/ei-golioth-model-updater-linux.git
 cd ei-golioth-model-updater-linux
 mkdir -p certs
 cd certs
