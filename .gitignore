@@ -53,3 +53,12 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# Python 
+build/
+*.o
+*.d
+golioth_model_updater
+__pycache__/
+*.pyc
+.venv/

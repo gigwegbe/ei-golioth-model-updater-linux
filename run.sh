@@ -1,0 +1,1 @@
+python3 camera_infer_tflite.py     --model .golioth/models/ai-model.tflite     --labels .golioth/models/labels.txt     --camera 0     --top_k 3
