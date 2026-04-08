@@ -40,14 +40,14 @@ Creates:
 Example:
 
 ```bash
-../../golioth-firmware-sdk/scripts/certificates/generate_device_certificate.sh ei-model-deployment ubuntu-desktop pem
+../../golioth-firmware-sdk/scripts/certificates/generate_device_certificate.sh ei-model-deployment rubik-pi pem
 ```
 
 ## Step 4: Copy to Standard Names
 
 ```bash
-cp ei-model-deployment-ubuntu-desktop.crt.pem client.crt.pem
-cp ei-model-deployment-ubuntu-desktop.key.pem client.key.pem
+cp ei-model-deployment-rubik-pi.crt.pem client.crt.pem
+cp ei-model-deployment-rubik-pi.key.pem client.key.pem
 cd ..
 ```
 
@@ -55,14 +55,4 @@ cd ..
 
 ```bash
 cp ../golioth-firmware-sdk/src/isrgrootx1_goliothrootx1.pem .
-```
-
-## Step 6: Build and Run
-
-```bash
-mkdir -p build && cd build
-cmake -DGOLIOTH_SDK_PATH=../../golioth-firmware-sdk ..
-make -j$(nproc)
-cd ..
-./build/golioth_model_updater
 ```
