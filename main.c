@@ -35,7 +35,7 @@ static const char *TAG = "model_updater";
 
 /* Where downloaded models and labels are stored */
 #ifndef MODEL_DIR
-#define MODEL_DIR "/Users/george/Documents/github/ei-golioth-model-updater-linux/.golioth/models"
+#define MODEL_DIR "/home/ubuntu/Documents/ei-golioth-model-updater-linux/.golioth/models"
 #endif
 
 /* Golioth artifact package names to watch for */
