@@ -139,13 +139,13 @@ def set_input_tensor(interpreter, image_array):
 
     if input_dtype == np.float32:
         inp = image_array.astype(np.float32) / 255.0
+    elif input_dtype == np.int8:
+        # Edge Impulse int8 models: pixel - 128
+        inp = (image_array.astype(np.int32) - 128).astype(np.int8)
+    elif input_dtype == np.uint8:
+        inp = image_array.astype(np.uint8)
     else:
-        if scale and zero_point is not None:
-            inp = image_array.astype(np.float32) / scale + zero_point
-            inp = np.round(inp).astype(input_dtype)
-        else:
-            inp = image_array.astype(input_dtype)
-
+        inp = image_array.astype(input_dtype)
     inp = np.expand_dims(inp, axis=0)
     interpreter.set_tensor(tensor_index, inp)
 
@@ -185,7 +185,7 @@ def main():
                         help="Show top K predictions")
     parser.add_argument("--width", type=int, default=640,
                         help="Capture width")
-    parser.add_argument("--height", type=int, default=480,
+    parser.add_argument("--height", type=int, default=640,
                         help="Capture height")
     args = parser.parse_args()
 
